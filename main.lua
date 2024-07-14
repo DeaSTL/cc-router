@@ -43,13 +43,8 @@ function ipStrToIpInt(ipStr)
   block4
   )
   combined = bit32.bor(block1,block2,block3,block4)
-  print(string.format("0x%x",combined))
-  -- print(
-  -- block1.. "." ..
-  -- block2.. "." ..
-  -- block3.. "." ..
-  -- block4
-  -- )
+
+  return combined
 
 end
 

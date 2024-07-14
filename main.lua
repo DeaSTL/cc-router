@@ -27,6 +27,7 @@ function ipStrToIpInt(ipStr)
     error("When attempting to convert ip "..ipStr.." we were unable to get all the required blocks")
   end
   print(textutils.serialize(ipStrSplit))
+
   local block1 = tonumber(ipStrSplit[1])
   block1 = bit32.lshift(block1,24)
   local block2 = tonumber(ipStrSplit[2])
@@ -41,7 +42,11 @@ function ipStrToIpInt(ipStr)
   block3.."."..
   block4
   )
-  print(bit32.band(block1,block2,block3,block4))
+  combined = 0
+  combined = bit32.band(block1,combined)
+  combined = bit32.band(block2,combined)
+  combined = bit32.band(block3,combined)
+  combined = bit32.band(block4,combined)
   -- print(
   -- block1.. "." ..
   -- block2.. "." ..

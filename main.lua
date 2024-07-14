@@ -42,11 +42,7 @@ function ipStrToIpInt(ipStr)
   block3.."."..
   block4
   )
-  combined = 0
-  combined = bit32.band(block1,combined)
-  combined = bit32.band(block2,combined)
-  combined = bit32.band(block3,combined)
-  combined = bit32.band(block4,combined)
+  combined = bit32.bor(block1,block2,block3,block4)
   print(combined)
   -- print(
   -- block1.. "." ..

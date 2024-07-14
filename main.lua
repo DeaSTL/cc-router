@@ -9,6 +9,14 @@ sides = {
   "front"
 }
 
+peripherals = peripheral.getName()
+
+for i=1,#peripherals do
+  print(peripherals[i])
+end
+
 for i=1,#sides do
   print(sides[i])
 end
+
+

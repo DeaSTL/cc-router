@@ -1,28 +1,14 @@
-print("hello world")
+rednet.open("top")
 
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
-print("hello world")
+sides = {
+  "top",
+  "bottom",
+  "left",
+  "right",
+  "back",
+  "front"
+}
 
+for i=1,#sides do
+  print(sides[i] 
+end

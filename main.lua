@@ -26,7 +26,7 @@ function ipStrToIpInt(ipStr)
   if #ipStrSplit < 4 then
     error("When attempting to convert ip "..ipStr.." we were unable to get all the required blocks")
   end
-  textutils.serialize(ipStrSplit) 
+  print(textutils.serialize(ipStrSplit))
   local block1 = tonumber(ipStrSplit[1])
   block1 = bit32.lshift(block1,24)
   local block2 = tonumber(ipStrSplit[2])

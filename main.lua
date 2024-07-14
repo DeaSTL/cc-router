@@ -1,23 +1,25 @@
-rednet.open("top")
 
-sides = {
-  "top",
-  "bottom",
-  "left",
-  "right",
-  "back",
-  "front"
-}
+function getClosestModem()
 
-peripherals = peripheral.getNames()
+  local peripherals = peripheral.getNames()
 
-for i=1,#peripherals do
-  per = peripherals[i]
-  print(peripheral.getType(per))
+  for i=1,#peripherals do
+    per = peripherals[i]
+    perType = peripheral.getType(per))
+    if perType then 
+      print("found modem at " .. per)
+      rednet.open(per)
+      break
+    end
+  end
+  error("Could not find modem")
 end
 
-for i=1,#sides do
-  print(sides[i])
-end
+
+
+getClosestModem()
+
+
+
 
 

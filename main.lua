@@ -10,5 +10,5 @@ sides = {
 }
 
 for i=1,#sides do
-  print(sides[i] 
+  print(sides[i])
 end

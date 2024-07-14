@@ -12,7 +12,8 @@ sides = {
 peripherals = peripheral.getNames()
 
 for i=1,#peripherals do
-  print(peripherals[i])
+  per = peripherals[i]
+  peripheral.getType(per)
 end
 
 for i=1,#sides do

@@ -91,6 +91,8 @@ end
 getModem()
 formatIP(config.ip)
 
+ipStrToIpInt("192.168.1.1")
+
 
 
 

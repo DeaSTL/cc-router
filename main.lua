@@ -1,5 +1,5 @@
 
-function getClosestModem()
+function getModem()
 
   local peripherals = peripheral.getNames()
 
@@ -17,7 +17,7 @@ end
 
 
 
-getClosestModem()
+getModem()
 
 
 

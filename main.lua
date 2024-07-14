@@ -10,10 +10,10 @@ function formatIP(ipInt)
   block1 = bit32.rshift(block1,24)
 
   local block2 = bit32.band(0x00FF0000,ipInt)
-  block2 = bit32.rshift(block1,16)
+  block2 = bit32.rshift(block2,16)
 
   local block3 = bit32.band(0x0000FF00,ipInt)
-  block3 = bit32.rshift(block1,8)
+  block3 = bit32.rshift(block3,8)
 
   local block4 = bit32.band(0x000000FF,ipInt)
 

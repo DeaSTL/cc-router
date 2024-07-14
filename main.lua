@@ -45,7 +45,7 @@ end
 
 
 getModem()
-
+formatIP(config.)
 
 
 

@@ -9,7 +9,7 @@ sides = {
   "front"
 }
 
-peripherals = peripheral.getName()
+peripherals = peripheral.getNames()
 
 for i=1,#peripherals do
   print(peripherals[i])

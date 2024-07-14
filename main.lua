@@ -34,7 +34,13 @@ function ipStrToIpInt(ipStr)
   local block3 = tonumber(ipStrSplit[3])
   block3 = bit32.lshift(block3,8)
   local block3 = tonumber(ipStrSplit[4])
-  
+ 
+  print(
+  block1.."."..
+  block2.."."..
+  block3.."."..
+  block4.."."
+  )
   print(bit32.band(block1,block2,block3,block4))
   -- print(
   -- block1.. "." ..

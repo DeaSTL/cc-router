@@ -1,11 +1,12 @@
 
 
 local config = {
-  ip=0xC0A80101
+  ip=0xC0A80101,
+  dhcpIpRange=[]
 }
 
 
-function formatIP(ipInt)
+function ipToString(ipInt)
   local block1 = bit32.band(0xFF000000,ipInt)
   block1 = bit32.rshift(block1,24)
 
@@ -17,12 +18,12 @@ function formatIP(ipInt)
 
   local block4 = bit32.band(0x000000FF,ipInt)
 
-  print(
-  block1.. "," ..
-  block2.. "," ..
-  block3.. "," ..
+  return
+  block1.. "." ..
+  block2.. "." ..
+  block3.. "." ..
   block4
-  )
+  
 end
 
 

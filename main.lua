@@ -5,8 +5,8 @@ function getModem()
 
   for i=1,#peripherals do
     per = peripherals[i]
-    perType = peripheral.getType(per))
-    if perType then 
+    perType = peripheral.getType(per)
+    if perType == 'modem' then 
       print("found modem at " .. per)
       rednet.open(per)
       break

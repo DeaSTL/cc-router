@@ -9,7 +9,7 @@ function getModem()
     if perType == 'modem' then 
       print("found modem at " .. per)
       rednet.open(per)
-      break
+      return
     end
   end
   error("Could not find modem")

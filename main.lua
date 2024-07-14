@@ -1,7 +1,7 @@
 
 
 local config = {
-  ip=0xC0A80101,
+  ip="192.168.1.1",
   dhcpIpRange="192.168.1.0/24"
 }
 
@@ -89,7 +89,7 @@ function getModem()
   error("Could not find modem")
 end
 
-
+config.ip = 
 
 getModem()
 ipToString(config.ip)

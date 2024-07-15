@@ -2,8 +2,8 @@ require("iplib")
 
 
 local config = {
-  ip=iplib:ipStrToIpInt("192.168.1.1"),
-  subnetMask=iplib:cidrStrToMask("192.168.1.0/24")
+  ip=iplib:ipStrToInt("192.168.1.1"),
+  subnetMask=iplib:cidrStrToMaskInt("192.168.1.0/24")
 }
 
 
@@ -26,7 +26,7 @@ end
 
 print(textutils.serialize(config))
 
-print("ipstr:"..iplib:ipToString(config.ip))
+print("ipstr:"..iplib:ipIntToStr(config.ip))
 getModem()
 
 

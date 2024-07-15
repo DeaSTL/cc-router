@@ -28,19 +28,20 @@ function iplib:ipStrToIpInt(ipStr)
   end
   print(textutils.serialize(ipStrSplit))
 
+  --192.xxx.xxx.xxx
   local block1 = tonumber(ipStrSplit[1])
   block1 = bit32.lshift(block1,24)
+
+  --xxx.168.xxx.xxx
   local block2 = tonumber(ipStrSplit[2])
   block2 = bit32.lshift(block2,16)
+
+  --xxx.xxx.1.xxx
   local block3 = tonumber(ipStrSplit[3])
   block3 = bit32.lshift(block3,8)
+
+  --xxx.xxx.xxx.1
   local block4 = tonumber(ipStrSplit[4])
-  print(
-  block1.."."..
-  block2.."."..
-  block3.."."..
-  block4
-  )
   combined = bit32.bor(block1,block2,block3,block4)
 
   return combined

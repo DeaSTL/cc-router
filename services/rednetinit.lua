@@ -1,8 +1,8 @@
-rednetinit = {}
+rednetService = {}
 
-function rednetinit:init()
+function rednetService:init()
   print("Initializing rednet service")
 end
-function rednetinit:run()
+function rednetService:run()
   print("Running rednet service")
 end

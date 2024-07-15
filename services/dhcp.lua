@@ -8,6 +8,6 @@ function dhcpService:run()
   while true do
     local id, message = rednet.receive("dhcp")
 
-    print("ID: ",id," Message: ",message)
+    print("ID:",id,"Message:",message)
   end
 end

@@ -27,11 +27,9 @@ end
 print("ipstr:"..iplib:ipIntToStr(config.ip))
 print("masked ip:"..
   iplib:ipIntToStr(
-    bit32.bnot(
-      bit32.band(
-        config.subnetMask,
-        config.ip
-      )
+    bit32.band(
+      bit32.bnot(config.subnetMask),
+      config.ip
     )
   )
 )

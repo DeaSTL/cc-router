@@ -13,7 +13,7 @@ local function splitStr(inputstr, sep)
   return t
 end
 
-function iplib:cidrStrToMask(cidrStr)
+function iplib:cidrStrToMaskInt(cidrStr)
   local ipStrSplit = splitStr(cidrStr,"/")
   local prefixLength = tonumber(ipStrSplit[2])
   local mask = bit32.lshift(bit32.bnot(0),32 - prefixLength)

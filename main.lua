@@ -2,14 +2,18 @@ require("iplib")
 
 
 local config = {
-  ip=iplib:ipStrToInt("192.168.69.42"),
-  subnetMask=iplib:cidrStrToMaskInt("192.168.1.0/24")
+  ip=iplib:ipStrToInt("192.168.1.1"),
+  ipRange=iplib:cidrStrToMaskInt("192.168.1.0/24"),
 }
 
-function config:isInRange(ip)
-   
+function config:generateIpRange()
+  local maxRange = bit32.bnot(self.dhcpRange)
+  local ipPrefix = bit32.band(self.ip, self.ipRange)
+  
+  for i = 0, maxRange, 1 do
+    print(iplib:ipIntToStr(bit32.bor(ipPrefix,i))) 
+  end
 end
-
 
 
 
@@ -33,13 +37,13 @@ print("ipstr:"..iplib:ipIntToStr(config.ip))
 print("masked ip:"..
   iplib:ipIntToStr(
     bit32.band(
-      bit32.bnot(config.subnetMask),
+      bit32.bnot(config.dhcpRange),
       config.ip
     )
   )
 )
 
-print("inverted range: ",bit32.bnot(config.subnetMask))
+print("inverted range: ",bit32.bnot(config.dhcpRange))
 getModem()
 
 

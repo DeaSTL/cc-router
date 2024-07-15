@@ -16,7 +16,7 @@ function requestNewIP()
     timestamp = os.date(),
     payload = textutils.serializeJSON(dhcpPayload)
   }
-  rednet.broadcast(request,"dhcp")
+  rednet.broadcast(iplib:serializeRequest(request),"dhcp")
 end
 
 function dhcpClientService:init()
@@ -24,7 +24,7 @@ function dhcpClientService:init()
   local dhcpIP = settings.get("dhcp.ip")
 
   if dhcpIP == nil then
-    requestNewIP()  
+    requestNewIP()
   end
 end
 

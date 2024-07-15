@@ -1,7 +1,6 @@
 require("iplib")
 require("services")
 
----@alias routerConfig {ip: integer, ipRange: integer}
 
 ---@type routerConfig
 local config = {

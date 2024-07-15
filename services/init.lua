@@ -1,5 +1,5 @@
 require("services.dhcp")
-require("services.rednetinit")
+require("services.rednet")
 
 function startServices()
   --startup services

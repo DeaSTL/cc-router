@@ -17,10 +17,11 @@ function setupModem()
   error("Could not find modem")
 end
 
-function rednetService:init()
+---@type routerConfig
+function rednetService:init(config)
   print("Initializing rednet service")
   setupModem()
 end
-function rednetService:run()
+function rednetService:run(config)
   print("Running rednet service")
 end

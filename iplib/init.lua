@@ -22,7 +22,7 @@ function iplib:cidrStrToMask(cidrStr)
 end
 
 function iplib:ipStrToIpInt(ipStr)
-  print("ipStr"..cidrStr)
+  print("ipStr"..ipStr)
   local ipStrSplit = splitStr(ipStr,".")
 
   if #ipStrSplit < 4 then

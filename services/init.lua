@@ -3,11 +3,11 @@ require("services.rednetinit")
 
 function startServices()
   --startup services
-  rednetinit:init()
-  dhcp:init()
+  rednetService:init()
+  dhcpService:init()
 
   parallel.waitForAll(
-    rednetinit.run,
-    dhcp.run
+    rednet.run,
+    dhcpService.run
   )
 end

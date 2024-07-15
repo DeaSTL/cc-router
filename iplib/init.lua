@@ -88,7 +88,7 @@ function iplib:ipIntToStr(ipInt)
   block3.. "." ..
   block4
 end
-
+---@alias requestFmt { dest: integer, src: integer, payload: string, timestamp: string}
 
 ---comment
 ---@param dataStr string

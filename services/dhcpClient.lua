@@ -22,13 +22,8 @@ function dhcpClientService:init()
   local dhcpIP = settings.get("dhcp.ip")
 
   if dhcpIP == nil then
-    
+    requestNewIP()  
   end
-  ---@type requestFmt
-  local request = {
-    src = 
-  }
-  rednet.send()
 end
 
 function dhcpClientService:run()

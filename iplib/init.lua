@@ -89,15 +89,15 @@ function iplib:ipIntToStr(ipInt)
   block4
 end
 
+
+---comment
+---@param dataStr string
+---@return { dest: string, src: string, payload: string, timestamp: string}
 function iplib:deserializeRequest(dataStr)
   local data = textutils.unserializeJSON(dataStr)
 
-  return {
-    dest = data.dest,
-    src = data.src,
-    payload = data.payload,
-    timestamp = data.timestamp
-  }
+  return data
+
 end
 
 

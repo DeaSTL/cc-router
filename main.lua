@@ -24,7 +24,7 @@ function getModem()
   error("Could not find modem")
 end
 
--- print(textutils.serialize(config))
+print(textutils.serialize(config))
 -- getModem()
 -- ipToString(config.ip)
 

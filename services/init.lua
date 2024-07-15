@@ -2,6 +2,8 @@ require("services.dhcp")
 require("services.rednet")
 require("services.dhcpClient")
 require("services.icmp")
+
+
 ---@alias routerConfig {ip: integer, ipRange: integer}
 --
 ---@param config routerConfig

@@ -26,7 +26,7 @@ end
 ---@return integer
 function iplib:cidrStrToMaskInt(cidrStr)
   local ip_str_split = split_str(cidrStr,"/")
-  print(textutils.serialize(ip_str_split))
+  debugTable(ip_str_split)
   local prefix_length = tonumber(ip_str_split[2])
   local mask = bit32.lshift(bit32.bnot(0),32 - prefix_length)
   return mask

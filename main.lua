@@ -1,8 +1,8 @@
 
 
 local config = {
-  ip="192.168.1.1",
-  dhcpIpRange="192.168.1.0/24"
+  ip=ipStrToIpInt("192.168.1.1"),
+  subnetMask=cidrStrToMask("192.168.1.0/24")
 }
 
 function splitStr(inputstr, sep)
@@ -17,11 +17,14 @@ function splitStr(inputstr, sep)
 end
 
 function cidrStrToMask(cidrStr)
-   
+  local ipStrSplit = splitStr(cidrStr,"/")
+  local prefixLength = tonumber(ipStrSplit[2])
+  local mask = bit32.lshift(bit32.bnot(0),32 - prefixLength)
+  return mask
 end
 
 function ipStrToIpInt(ipStr)
-  ipStrSplit = splitStr(ipStr,".")
+  local ipStrSplit = splitStr(ipStr,".")
 
   if #ipStrSplit < 4 then
     error("When attempting to convert ip "..ipStr.." we were unable to get all the required blocks")
@@ -35,7 +38,6 @@ function ipStrToIpInt(ipStr)
   local block3 = tonumber(ipStrSplit[3])
   block3 = bit32.lshift(block3,8)
   local block4 = tonumber(ipStrSplit[4])
- 
   print(
   block1.."."..
   block2.."."..
@@ -69,7 +71,6 @@ function ipToString(ipInt)
   block2.. "." ..
   block3.. "." ..
   block4
-  
 end
 
 
@@ -89,7 +90,8 @@ function getModem()
   error("Could not find modem")
 end
 
-config.ip = 
+config.ipInt = 
+config.dhcpIpRangeInt
 
 getModem()
 ipToString(config.ip)

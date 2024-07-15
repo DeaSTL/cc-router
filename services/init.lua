@@ -21,6 +21,7 @@ end
 function startClientServices(config)
   rednetService:init(config)
   dhcpClientService:init()
+  icmpService:init()
 
   parallel.waitForAll(
     rednetService.run,

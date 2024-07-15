@@ -90,14 +90,13 @@ function iplib:ipIntToStr(ipInt)
 end
 ---@alias requestFmt { dest: integer, src: integer, payload: string, timestamp: string}
 
----comment
+
+---deserializes request using requestFmt
 ---@param dataStr string
----@return { dest: string, src: string, payload: string, timestamp: string}
+---@return requestFmt 
 function iplib:deserializeRequest(dataStr)
   local data = textutils.unserializeJSON(dataStr)
-
   return data
-
 end
 
 

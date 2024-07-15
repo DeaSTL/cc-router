@@ -1,7 +1,7 @@
 require("services.dhcp")
 require("services.rednet")
 
-function startServices()
+function startServices(config)
   --startup services
   rednetService:init()
   dhcpService:init()

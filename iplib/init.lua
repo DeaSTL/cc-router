@@ -106,4 +106,7 @@ function iplib:serializeRequest(data)
   return textutils.serializeJSON(data) 
 end
 
+iplib.messageTypes = {
+  NEW_DHCP = "NEW_DHCP"
+}
 

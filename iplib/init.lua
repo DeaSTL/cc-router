@@ -21,6 +21,7 @@ end
 ---@return integer
 function iplib:cidrStrToMaskInt(cidrStr)
   local ip_str_split = split_str(cidrStr,"/")
+  textutils.serialize(ip_str_split)
   local prefix_length = tonumber(ip_str_split[2])
   local mask = bit32.lshift(bit32.bnot(0),32 - prefix_length)
   return mask
@@ -35,7 +36,6 @@ function iplib:ipStrToInt(ip_str)
   if #ip_str_split < 4 then
     error("When attempting to convert ip "..ip_str.." we were unable to get all the required blocks")
   end
-  print(textutils.serialize(ip_str_split))
 
   --192.xxx.xxx.xxx
   local block1 = tonumber(ip_str_split[1])

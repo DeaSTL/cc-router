@@ -1,6 +1,7 @@
 dhcpService = {}
 
-function dhcpService:init()
+---@param config routerConfig
+function dhcpService:init(config)
   print("Initializing dhcp service")
 end
 

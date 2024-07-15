@@ -90,13 +90,10 @@ function getModem()
   error("Could not find modem")
 end
 
-config.ipInt = 
-config.dhcpIpRangeInt
-
+print(textutils.serialize(config))
 getModem()
 ipToString(config.ip)
 
-ipStrToIpInt("192.168.1.1")
 
 
 

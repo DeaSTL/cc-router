@@ -1,7 +1,7 @@
 dhcpClientService = {}
 
 function dhcpClientService:init()
-  print("Running dhcp client service")
+  print("Initializing dhcp client service")
 end
 
 function dhcpClientService:run()

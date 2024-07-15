@@ -1,10 +1,10 @@
 dhcpClientService = {}
 
-dhcpClientService:init()
+function dhcpClientService:init()
   
 end
 
-dhcpClientService:run()
+function dhcpClientService:run()
 
 end
 

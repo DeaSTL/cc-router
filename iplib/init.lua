@@ -14,7 +14,6 @@ local function splitStr(inputstr, sep)
 end
 
 function iplib:cidrStrToMask(cidrStr)
-  print("tomask"..cidrStr)
   local ipStrSplit = splitStr(cidrStr,"/")
   local prefixLength = tonumber(ipStrSplit[2])
   local mask = bit32.lshift(bit32.bnot(0),32 - prefixLength)
@@ -22,7 +21,6 @@ function iplib:cidrStrToMask(cidrStr)
 end
 
 function iplib:ipStrToIpInt(ipStr)
-  print("ipStr"..ipStr)
   local ipStrSplit = splitStr(ipStr,".")
 
   if #ipStrSplit < 4 then

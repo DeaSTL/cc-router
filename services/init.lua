@@ -6,5 +6,8 @@ function startServices()
   rednetinit:init()
   dhcp:init()
 
-  parallel.waitForAll(dhcp:run(),rednetinit:run())
+  parallel.waitForAll(
+    rednetinit.run,
+    dhcp.run
+  )
 end

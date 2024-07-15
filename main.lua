@@ -25,6 +25,8 @@ function getModem()
 end
 
 print(textutils.serialize(config))
+
+print("ipstr:"..iplib:ipToString(config.ip))
 getModem()
 
 

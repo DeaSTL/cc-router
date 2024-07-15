@@ -99,4 +99,11 @@ function iplib:deserializeRequest(dataStr)
   return data
 end
 
+---comment
+---@param data requestFmt
+---@return dataStr string
+function iplib:serializeRequest(data)
+  return textutils.serializeJSON(data) 
+end
+
 

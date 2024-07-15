@@ -1,7 +1,10 @@
 
 iplib = {}
 
-
+---splits a string by a delimiter
+---@param inputstr string
+---@param sep string
+---@return table
 local function split_str(inputstr, sep)
   if sep == nil then
     sep = "%s"
@@ -13,6 +16,9 @@ local function split_str(inputstr, sep)
   return t
 end
 
+---converts a ipv4 cidr string xxx.xxx.xxx.0/xxx into a 32-bit integer
+---@param cidrStr string
+---@return integer
 function iplib:cidrStrToMaskInt(cidrStr)
   local ip_str_split = split_str(cidrStr,"/")
   local prefix_length = tonumber(ip_str_split[2])
@@ -20,6 +26,9 @@ function iplib:cidrStrToMaskInt(cidrStr)
   return mask
 end
 
+---converts a ipv4 string into a 32-bit integer
+---@param ip_str string
+---@return integer
 function iplib:ipStrToInt(ip_str)
   local ip_str_split = split_str(ip_str,".")
 
@@ -48,6 +57,10 @@ function iplib:ipStrToInt(ip_str)
 
 end
 
+
+---takes a 32 bit integer and converts it to a ipv4 address xxx.xxx.xxx.xxx
+---@param ip_int any
+---@return string
 function iplib:ipIntToStr(ip_int)
   --192.xxx.xxx.xxx
   local block1 = bit32.band(0xFF000000,ip_int)

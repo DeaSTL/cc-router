@@ -1,8 +1,8 @@
-dhcp = {}
+dhcpService = {}
 
-function dhcp:init()
+function dhcpService:init()
   print("Initializing dhcp service")
 end
-function dhcp:run()
+function dhcpService:run()
   print("Running dhcp service")
 end

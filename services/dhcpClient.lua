@@ -2,7 +2,7 @@ dhcpClientService = {}
 
 function requestNewIP()
   local dhcpPayload = {
-    type = iplib.messageTypes:NEW_DHCP,
+    type = iplib.messageTypes.NEW_DHCP,
     data = {
       computerId = os.getComputerID()
     }

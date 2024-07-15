@@ -1,4 +1,6 @@
-function splitStr(inputstr, sep)
+
+
+local function splitStr(inputstr, sep)
   if sep == nil then
     sep = "%s"
   end
@@ -9,14 +11,14 @@ function splitStr(inputstr, sep)
   return t
 end
 
-function cidrStrToMask(cidrStr)
+local function cidrStrToMask(cidrStr)
   local ipStrSplit = splitStr(cidrStr,"/")
   local prefixLength = tonumber(ipStrSplit[2])
   local mask = bit32.lshift(bit32.bnot(0),32 - prefixLength)
   return mask
 end
 
-function ipStrToIpInt(ipStr)
+local function ipStrToIpInt(ipStr)
   local ipStrSplit = splitStr(ipStr,".")
 
   if #ipStrSplit < 4 then
@@ -43,7 +45,7 @@ function ipStrToIpInt(ipStr)
 
 end
 
-function ipToString(ipInt)
+local function ipToString(ipInt)
   --192.xxx.xxx.xxx
   local block1 = bit32.band(0xFF000000,ipInt)
   block1 = bit32.rshift(block1,24)
@@ -65,3 +67,10 @@ function ipToString(ipInt)
   block3.. "." ..
   block4
 end
+
+
+iplib = {
+  ipToString,
+  cidrStrToMask,
+  ipStrToIpInt
+}

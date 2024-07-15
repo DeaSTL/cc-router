@@ -1,6 +1,11 @@
 
 iplib = {}
 
+---comment
+---@param t table
+local function debugTable(t)
+  print(textutils.serialize(t))
+end
 ---splits a string by a delimiter
 ---@param inputstr string
 ---@param sep string

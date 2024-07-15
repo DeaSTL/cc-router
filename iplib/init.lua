@@ -64,29 +64,33 @@ function iplib:ipStrToInt(ip_str)
 end
 
 ---takes a 32 bit integer and converts it to a ipv4 address xxx.xxx.xxx.xxx
----@param ip_int any
+---@param ipInt any
 ---@return string
-function iplib:ipIntToStr(ip_int)
+function iplib:ipIntToStr(ipInt)
   --192.xxx.xxx.xxx
-  local block1 = bit32.band(0xFF000000,ip_int)
+  local block1 = bit32.band(0xFF000000,ipInt)
   block1 = bit32.rshift(block1,24)
 
   --xxx.168.xxx.xxx
-  local block2 = bit32.band(0x00FF0000,ip_int)
+  local block2 = bit32.band(0x00FF0000,ipInt)
   block2 = bit32.rshift(block2,16)
 
   --xxx.xxx.1.xxx
-  local block3 = bit32.band(0x0000FF00,ip_int)
+  local block3 = bit32.band(0x0000FF00,ipInt)
   block3 = bit32.rshift(block3,8)
 
   --xxx.xxx.xxx.1
-  local block4 = bit32.band(0x000000FF,ip_int)
+  local block4 = bit32.band(0x000000FF,ipInt)
 
   return
   block1.. "." ..
   block2.. "." ..
   block3.. "." ..
   block4
+end
+
+function iplib:deserializeRequest(dataStr)
+  textutils.unserialize(dataStr)
 end
 
 

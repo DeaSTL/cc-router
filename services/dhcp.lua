@@ -3,7 +3,9 @@ dhcpService = {}
 function dhcpService:init()
   print("Initializing dhcp service")
 end
-function dhcpService:run()
+
+---@param config routerConfig
+function dhcpService:run(config)
   print("Running dhcp service")
   while true do
     local id, message = rednet.receive("dhcp")

@@ -47,7 +47,7 @@ function iplib:ipStrToInt(ip_str)
   return combined
 
 end
-
+--@parm ip_int number
 function iplib:ipIntToStr(ip_int)
   --192.xxx.xxx.xxx
   local block1 = bit32.band(0xFF000000,ip_int)

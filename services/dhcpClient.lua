@@ -2,11 +2,17 @@ dhcpClientService = {}
 
 function requestNewIP()
   local dhcpPayload = {
-    type = "DHCP_NEW"
-
+    type = iplib.messageTypes.NEW_DHCP,
+    data = {
+      computerId = os.getComputerID()
+    }
   }
+  ---@type requestFmt
   local request = {
-
+    src = nil,
+    dest = nil,
+    timestamp = os.date()
+    payload = textutils.serializeJSON(dhcpPayload)
   }
   rednet.send
 end

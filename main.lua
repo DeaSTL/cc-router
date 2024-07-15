@@ -1,4 +1,4 @@
-local iplib = require("iplib")
+require("iplib")
 
 
 print(textutils.serialize(iplib))

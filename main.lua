@@ -46,9 +46,9 @@ print("masked ip:"..
 )
 
 startServices()
-print("inverted range: ",bit32.bnot(router.ipRange))
-router:generateIpRange()
-getModem()
+-- print("inverted range: ",bit32.bnot(router.ipRange))
+-- router:generateIpRange()
+-- getModem()
 
 
 

@@ -4,13 +4,25 @@ require("services.rednet")
 ---@alias routerConfig {ip: integer, ipRange: integer}
 --
 ---@param config routerConfig
-function startServices(config)
+function startRouterServices(config)
   --startup services
-  rednetService:init()
-  dhcpService:init()
+  rednetService:init(config)
+  dhcpService:init(config)
 
   parallel.waitForAll(
     rednetService.run,
     dhcpService.run
   )
 end
+
+function startClientServices(config)
+  rednetService:init(config)
+  dhcpClientService:init()
+
+  parallel.waitForAll(
+    rednetService.run,
+    dhcpClientService.run,
+    icmpService.run
+  )
+end
+

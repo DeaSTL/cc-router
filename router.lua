@@ -30,7 +30,7 @@ print("masked ip:"..
   )
 )
 
-startServices(config)
+startRouterServices(config)
 -- print("inverted range: ",bit32.bnot(router.ipRange))
 -- router:generateIpRange()
 -- getModem()

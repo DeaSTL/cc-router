@@ -7,7 +7,7 @@ local config = {
 }
 
 function config:generateIpRange()
-  local maxRange = bit32.bnot(self.dhcpRange)
+  local maxRange = bit32.bnot(self.ipRange)
   local ipPrefix = bit32.band(self.ip, self.ipRange)
   
   for i = 0, maxRange, 1 do

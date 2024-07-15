@@ -2,7 +2,9 @@ require("services.dhcp")
 require("services.rednetinit")
 
 function startServices()
-  dhcp:init()
+  --startup services
   rednetinit:init()
-  waitForAll(dhcp:run(),rednetinit:run()) 
+  dhcp:init()
+
+  waitForAll(dhcp:run(),rednetinit:run())
 end

@@ -38,6 +38,8 @@ print("masked ip:"..
     )
   )
 )
+
+print("inverted range: ",bit32.bnot(config.subnetMask))
 getModem()
 
 

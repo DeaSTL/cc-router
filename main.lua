@@ -37,7 +37,7 @@ print("ipstr:"..iplib:ipIntToStr(config.ip))
 print("masked ip:"..
   iplib:ipIntToStr(
     bit32.band(
-      bit32.bnot(config.dhcpRange),
+      bit32.bnot(config.ipRange),
       config.ip
     )
   )

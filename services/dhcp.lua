@@ -9,5 +9,9 @@ function dhcpService:run()
     local id, message = rednet.receive("dhcp")
 
     print("ID:",id,"Message:",message)
+    ---@type requestFmt
+    local data = iplib:serializeRequest(message)
+
+
   end
 end

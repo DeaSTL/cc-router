@@ -3,7 +3,7 @@ require("iplib")
 
 local config = {
   ip=iplib:ipStrToInt("192.168.1.1"),
-  ipRange=iplib:cidrStrToMaskInt("192.168.1.0/16"),
+  ipRange=iplib:cidrStrToMaskInt("192.168.1.0/24"),
 }
 
 function config:generateIpRange()

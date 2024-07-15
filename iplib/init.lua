@@ -48,21 +48,21 @@ function iplib:ip_str_to_ip_int(ip_str)
 
 end
 
-function iplib:ip_int_to_str(ipInt)
+function iplib:ip_int_to_str(ip_int)
   --192.xxx.xxx.xxx
-  local block1 = bit32.band(0xFF000000,ipInt)
+  local block1 = bit32.band(0xFF000000,ip_int)
   block1 = bit32.rshift(block1,24)
 
   --xxx.168.xxx.xxx
-  local block2 = bit32.band(0x00FF0000,ipInt)
+  local block2 = bit32.band(0x00FF0000,ip_int)
   block2 = bit32.rshift(block2,16)
 
   --xxx.xxx.1.xxx
-  local block3 = bit32.band(0x0000FF00,ipInt)
+  local block3 = bit32.band(0x0000FF00,ip_int)
   block3 = bit32.rshift(block3,8)
 
   --xxx.xxx.xxx.1
-  local block4 = bit32.band(0x000000FF,ipInt)
+  local block4 = bit32.band(0x000000FF,ip_int)
 
   return
   block1.. "." ..

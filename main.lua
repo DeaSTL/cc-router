@@ -3,10 +3,10 @@ local iplib = require("iplib")
 
 textutils.serialize(iplib)
 
-local config = {
-  ip=iplib.ipStrToIpInt("192.168.1.1"),
-  subnetMask=iplib.cidrStrToMask("192.168.1.0/24")
-}
+-- local config = {
+--   ip=iplib.ipStrToIpInt("192.168.1.1"),
+--   subnetMask=iplib.cidrStrToMask("192.168.1.0/24")
+-- }
 
 
 
@@ -26,9 +26,9 @@ function getModem()
   error("Could not find modem")
 end
 
-print(textutils.serialize(config))
-getModem()
-ipToString(config.ip)
+-- print(textutils.serialize(config))
+-- getModem()
+-- ipToString(config.ip)
 
 
 

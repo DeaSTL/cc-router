@@ -2,9 +2,14 @@ require("iplib")
 
 
 local config = {
-  ip=iplib:ipStrToInt("192.168.1.1"),
-  subnetMask=iplib:cidrStrToMaskInt("192.168.1.0/24")
+  ip=iplib:ipStrToInt("192.168.69.420"),
+  subnetMask=iplib:cidrStrToMaskInt("192.168.1.0/23")
 }
+
+function config:isInRange(ip)
+   
+end
+
 
 
 

@@ -5,4 +5,7 @@ function dhcpService:init()
 end
 function dhcpService:run()
   print("Running dhcp service")
+  while true do
+    local id, message = rednet.recieve("dhcp")
+  end
 end

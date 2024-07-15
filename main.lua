@@ -1,4 +1,4 @@
-local iplib = require("iplib.lua")
+local iplib = require("./iplib")
 
 
 print(textutils.serialize(iplib))

@@ -24,9 +24,8 @@ function getModem()
   error("Could not find modem")
 end
 
-print(textutils.serialize(config))
-
 print("ipstr:"..iplib:ipIntToStr(config.ip))
+print("masked ip:"..bit32.band(iplib:cidrStrToMaskInt(config.subnetMask)))
 getModem()
 
 

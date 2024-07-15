@@ -26,9 +26,11 @@ end
 
 print("ipstr:"..iplib:ipIntToStr(config.ip))
 print("masked ip:"..
-  bit32.band(
-    config.subnetMask,
-    config.ip
+  iplib:ipIntToStr(
+    bit32.band(
+      config.subnetMask,
+      config.ip
+    )
   )
 )
 getModem()

@@ -6,6 +6,7 @@ iplib = {}
 local function debugTable(t)
   print(textutils.serialize(t))
 end
+
 ---splits a string by a delimiter
 ---@param inputstr string
 ---@param sep string
@@ -61,7 +62,6 @@ function iplib:ipStrToInt(ip_str)
   return combined
 
 end
-
 
 ---takes a 32 bit integer and converts it to a ipv4 address xxx.xxx.xxx.xxx
 ---@param ip_int any

@@ -1,7 +1,8 @@
 require("services.dhcp")
 require("services.rednet")
 
-
+---@alias routerConfig {ip: integer, ipRange: integer}
+--
 ---@param routerConfig
 function startServices(config)
   --startup services

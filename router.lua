@@ -1,7 +1,9 @@
 require("iplib")
 require("services")
 
+---@alias routerConfig {ip: integer, ipRange: integer}
 
+---@type routerConfig
 local config = {
   ip=iplib:ipStrToInt("192.168.1.1"),
   ipRange=iplib:cidrStrToMaskInt("192.168.1.0/24"),

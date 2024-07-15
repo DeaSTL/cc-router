@@ -1,5 +1,8 @@
 require("services.dhcp")
+require("services.rednetinit")
 
 function startServices()
-  waitForAll(dhcp:run()) 
+  dhcp:init()
+  rednetinit:init()
+  waitForAll(dhcp:run(),rednetinit:run()) 
 end

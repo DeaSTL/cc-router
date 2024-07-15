@@ -1,3 +1,5 @@
+require("iplib")
+
 dhcpClientService = {}
 
 function requestNewIP()

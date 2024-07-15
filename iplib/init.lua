@@ -13,14 +13,14 @@ local function split_str(inputstr, sep)
   return t
 end
 
-function iplib:cidr_str_to_mask_int(cidrStr)
+function iplib:cidrStrToMaskInt(cidrStr)
   local ip_str_split = split_str(cidrStr,"/")
   local prefix_length = tonumber(ip_str_split[2])
   local mask = bit32.lshift(bit32.bnot(0),32 - prefix_length)
   return mask
 end
 
-function iplib:ip_str_to_ip_int(ip_str)
+function iplib:ipStrToInt(ip_str)
   local ip_str_split = split_str(ip_str,".")
 
   if #ip_str_split < 4 then
@@ -48,7 +48,7 @@ function iplib:ip_str_to_ip_int(ip_str)
 
 end
 
-function iplib:ip_int_to_str(ip_int)
+function iplib:ipIntToStr(ip_int)
   --192.xxx.xxx.xxx
   local block1 = bit32.band(0xFF000000,ip_int)
   block1 = bit32.rshift(block1,24)

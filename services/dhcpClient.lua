@@ -11,7 +11,7 @@ function requestNewIP()
   local request = {
     src = nil,
     dest = nil,
-    timestamp = os.date()
+    timestamp = os.date(),
     payload = textutils.serializeJSON(dhcpPayload)
   }
   rednet.send

@@ -11,7 +11,6 @@ local router = {
 function router:generateIpRange()
   local maxRange = bit32.bnot(self.ipRange)
   local ipPrefix = bit32.band(self.ip, self.ipRange)
-  
   for i = 0, maxRange, 1 do
     print(iplib:ipIntToStr(bit32.bor(ipPrefix,i))) 
   end

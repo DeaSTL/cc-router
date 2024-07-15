@@ -3,7 +3,7 @@ require("services.rednet")
 
 ---@alias routerConfig {ip: integer, ipRange: integer}
 --
----@param routerConfig
+---@param config routerConfig
 function startServices(config)
   --startup services
   rednetService:init()

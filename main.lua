@@ -2,7 +2,7 @@ require("iplib")
 
 
 local config = {
-  ip=iplib:ipStrToInt("192.168.69.420"),
+  ip=iplib:ipStrToInt("192.168.69.69"),
   subnetMask=iplib:cidrStrToMaskInt("192.168.1.0/16")
 }
 

@@ -2,6 +2,8 @@ require("iplib")
 
 dhcpClientService = {}
 
+
+
 function requestNewIP()
   local dhcpPayload = {
     type = iplib.messageTypes.NEW_DHCP_ADDRESS,

@@ -15,14 +15,14 @@ function dhcpService:run(config)
     local id, message = rednet.receive("dhcp")
     local request_data = iplib:deserializeRequest(message)
 
-    print("ID:",id,"Message:",textutils.serialize(request_data))
+    print("new dhcp request ID:",id,"Message:",textutils.serialize(request_data))
 
     ---@type dhcpRequest
     local dhcp_request = textutils.JSONdeserialize(request_data.payload)
-
+    
     if dhcp_request.type == dhcplib.messageTypes.NEW_DHCP_ADDRESS then
-      
+      print('computerId '..dhcp_request.data.computerId)
+      print('message type '..dhcp_request.type)
     end
-
   end
 end

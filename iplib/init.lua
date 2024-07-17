@@ -1,7 +1,7 @@
 
 iplib = {
   messageTypes = {
-    NEW_DHCP = "NEW_DHCP"
+    NEW_DHCP_ADDRESS = "NEW_DHCP_ADDRESS"
   }
 }
 

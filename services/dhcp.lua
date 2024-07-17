@@ -5,6 +5,8 @@ function dhcpService:init(config)
   print("Initializing dhcp service")
 end
 
+---@alias dhcpRequest {
+
 ---@param config routerConfig
 function dhcpService:run(config)
   print("Running dhcp service")
@@ -15,7 +17,9 @@ function dhcpService:run(config)
     print("ID:",id,"Message:",textutils.serialize(request_data))
 
     ---@type requestFmt
-    local data = iplib:serializeRequest(message)
+    local data = textutils.JSONdeserialize(request_data.payload)
+
+
     
     
   end

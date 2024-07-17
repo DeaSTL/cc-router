@@ -5,10 +5,10 @@ function dhcpService:init(config)
   print("Initializing dhcp service")
 end
 
----@alias dhcpRequest {
 
 ---@param config routerConfig
 function dhcpService:run(config)
+  config
   print("Running dhcp service")
   while true do
     local id, message = rednet.receive("dhcp")
@@ -16,8 +16,12 @@ function dhcpService:run(config)
 
     print("ID:",id,"Message:",textutils.serialize(request_data))
 
-    ---@type requestFmt
-    local data = textutils.JSONdeserialize(request_data.payload)
+    ---@type dhcpRequest
+    local dhcp_request = textutils.JSONdeserialize(request_data.payload)
+
+    if(dhcp_request.type){
+
+    }
 
 
     

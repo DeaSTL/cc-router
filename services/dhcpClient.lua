@@ -5,6 +5,7 @@ dhcpClientService = {}
 
 
 function requestNewIP()
+  ---@type dhcpRequest
   local dhcpPayload = {
     type = iplib.messageTypes.NEW_DHCP_ADDRESS,
     data = {

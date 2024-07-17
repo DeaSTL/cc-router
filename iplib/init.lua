@@ -112,5 +112,5 @@ end
 
 
 
----@alias dhcpRequest {type: string,data: {computerID: string} }
+---@alias dhcpRequest {type: string,data: {computerId: string} }
 

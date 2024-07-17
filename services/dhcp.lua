@@ -1,3 +1,5 @@
+require('dhcplib')
+
 dhcpService = {}
 
 ---@param config routerConfig

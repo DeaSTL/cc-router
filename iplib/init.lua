@@ -111,3 +111,6 @@ function iplib:serializeRequest(data)
 end
 
 
+
+---@alias dhcpRequest {type: string,data: table}
+

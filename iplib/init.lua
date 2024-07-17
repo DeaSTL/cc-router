@@ -109,5 +109,4 @@ end
 
 
 
----@alias dhcpRequest {type: string,data: {computerId: string} }
 

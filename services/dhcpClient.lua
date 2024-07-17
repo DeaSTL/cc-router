@@ -11,8 +11,8 @@ function requestNewIP()
   }
   ---@type requestFmt
   local request = {
-    src = nil,
-    dest = nil,
+    src = 0,
+    dest = 0,
     timestamp = os.date(),
     payload = textutils.serializeJSON(dhcpPayload)
   }

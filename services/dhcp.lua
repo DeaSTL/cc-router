@@ -20,7 +20,7 @@ function dhcpService:run(config)
     ---@type dhcpRequest
     local dhcp_request = textutils.JSONdeserialize(request_data.payload)
 
-    if dhcp_request.type ==  then
+    if dhcp_request.type == dhcplib.messageTypes.NEW_DHCP_ADDRESS then
       
     end
 
